@@ -1,0 +1,26 @@
+<div class="banner">
+  <div class="text-center buton">
+    <%= link_to "ajouter un restaurant", new_restaurant_path, class: "btn btn-danger b" %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row ">
+    <p><% @restaurants.each do |restaurant| %></p>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card text-center">
+        <p>title : <%= restaurant.name %></p>
+        <p>address : <%= restaurant.address %></p>
+        <p>phone : <%= restaurant.phone_number %></p>
+        <p>categorie : <%= restaurant.category %></p>
+        <div class="thomas">
+        <%= link_to restaurant_path(restaurant) do %>
+        <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+

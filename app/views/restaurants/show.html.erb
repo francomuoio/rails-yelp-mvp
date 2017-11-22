@@ -1,0 +1,28 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-4 col-md-4 col-md-offset-4">
+    <div class="cards">
+      <h1>RESTAURANT: <%= @restaurant.name %></h1>
+      <p><strong>Adresse:</strong> <%= @restaurant.address %></p>
+      <p><strong>Numéro de téléphone:</strong> <%= @restaurant.phone_number %></p>
+      <p><strong>Spécialité:</strong> <%= @restaurant.category %></p>
+      <p><strong>Avis clients:</strong><% @restaurant.reviews.each do |review| %></p>
+      <p><strong>Commentaire:</strong> <%= review.content %></p>
+      <p><strong>Note:</strong> <%= review.rating %>/5</p>
+      <p><% end %></p>
+    </div>
+    </div>
+      <br>
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+        <div class="text-center">
+      <%= link_to "home", restaurants_path, class: "btn btn-primary" %>
+      <%= link_to "ecrire une reviews", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+
